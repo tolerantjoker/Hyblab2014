@@ -23,10 +23,7 @@ The twelve projects where proposed by different local media:
  - [Terristoires][17]
  - [paysdelaloire.fr][18]
  - [Ouest Médialab][19]
-
-Destination Santé
-
- 
+ - [Destination Santé][20]
 
 
   [1]: http://www.hyblab.fr/wp-content/uploads/2013/12/cropped-HybLab_2014_logo_940.png
@@ -48,3 +45,5 @@ Destination Santé
   [17]: http://www.terristoires.info/
   [18]: http://paysdelaloire.fr/
   [19]: http://www.ouestmedialab.fr/
+  [20]: http://destinationsante.com/
+  
