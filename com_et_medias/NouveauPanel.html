@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+        <head>
+
+
+        <meta charset="utf-8">
+        <title>Carte de France cliquable en HTML5 / SVG</title>
+        
+		
+		
+        </head>
+		<style type="text/css">
+        #body{
+		width:100%;
+		height:100%;
+		
+		}
+    #panel1{
+		width:100%;
+		height:90%;
+		background-color:red;
+		position:absolute;
+		top:10%;	 
+	}
+	#panel2{
+		width:100%;
+		height:90%;
+		margin-left:-150%;
+		background-color:blue;
+		position:absolute;
+		top:10%;
+		-webkit-transition: all 2s ease;
+		-moz-transition: all 2s ease;
+		-o-transition: all 2s ease;
+		-ms-transition: all 2s ease;
+		transition: all 2s ease;
+	}
+	#panel2:target{
+		margin-left:0%;
+	}
+	
+	</style>
+	
+	<body>
+	
+		<ul class="menu" style="position:absolute;top:0px	">
+			<li><a href="#panel1">Panel 1</a></li>
+			<li><a href="#panel2">Panel 2</a></li>
+		</ul>
+	<div id="panel1"></div>
+	<div id="panel2"></div>
+	</body>
+</html>
