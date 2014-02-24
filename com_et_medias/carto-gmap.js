@@ -1,4 +1,4 @@
-var stylez = [
+﻿var stylez = [
   {
 	"featureType": "water",
 	"elementType": "geometry",
@@ -61,13 +61,13 @@ var showAgencyInfo = function(e) {
 			null,
 			'<div id="agency-name">' + e.data.NOM + '</div>'
 			+ '<div id="agency-address">' + e.data.ADRESSE + '</div>'
-			+ '<div id="agency-city">' + e.data.CODE_POSTAL + ' ' +e.data.VILLE + '</div>'
-			+ '<div id="agency-phone">'+e.data.TEL +'</div>'
+			+ '<div id="agency-city">' + e.data.CODE_POSTAL + ' ' + e.data.VILLE + '</div>'
+			+ '<div id="agency-phone">'+ e.data.TEL +'</div>'
 			+ '<div id="agency-website"><a href="http://'+site_web+'">' + site_web +'</a></div>',
 			null,
 			true
 	);
-	console.log(e.data.ADRESSE);
+	//console.log(e.data.ADRESSE);
 	popup.updateSize();
 	//popup.closeOnMove = true;
 	map.addPopup(popup);

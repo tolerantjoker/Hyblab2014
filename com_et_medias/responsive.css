@@ -64,6 +64,27 @@ and (max-width : 320px) {
 	}
 }
 
+/* Smartphones samsung S3 ----------- */
+@media only screen 
+and (max-width : 533px) {
+/* Styles */
+#body{
+-webkit-transform: rotate(90deg);
+}
+
+#carte{
+	width:303.81px;
+	left:0px;
+	 /*min-width:182.4px;*/
+}
+
+#legende{
+	width:229.19px;
+	left:303.81px;
+	/*min-width:137.6px;*/
+	}
+}
+
 /* iPads (portrait and landscape) ----------- */
 @media only screen 
 and (min-device-width : 768px) 

@@ -1,23 +1,28 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
         <head>
 
 
         <meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=yes">
         <title>Carte de France cliquable en HTML5 / SVG</title>
 		<link rel="stylesheet" href="lib/jquery-ui/themes/base/jquery-ui.css">
+		<link rel="stylesheet" href="jquery.qtip.min.css">
+		
         <link rel="stylesheet" href="demo.css" type="text/css" media="screen">
         <link rel="stylesheet" href="panel.css" type="text/css" media="screen">
         <link rel="stylesheet" href="legende.css" type="text/css" media="screen">
 			<link rel="stylesheet" href="default.css" type="text/css" media="screen">
-		<link rel="stylesheet" href="responsive.css" type="text/css" media="screen">
-		<!-- css francois -->
-		<!-- css pour jquery-ui -->
+		<link rel="stylesheet" href="responsive2.css" type="text/css" media="screen">
+
 		
            
          <script type="text/javascript" src="raphael-min.js"></script>
 		 
 		<script  type="text/javascript" src="codejquery.js"></script>
+		<script type="text/javascript" src="jquery-migrate-1.0.0.js" ></script>
+		<script  type="text/javascript" src="jquery.qtip.min.js"></script>
+		
 		<script  type="text/javascript"  src="jquery-csv.js"></script>
         <script type="text/javascript" src="script.js"></script> 
 		
@@ -258,7 +263,7 @@
 				<h1>Ils se sont développés dans l'Ouest.</h1>
 			</div>
 		</div>
-		<div id="interview-bloc1" style="position:relative;left:20%">
+		<div id="interview-bloc1" style="position:absolute">
 			<div id="tete1" class="tete">
 				<div id="super-photo1" class="super-photo">
 					<img src="images/interview/interview1.png"/>
@@ -350,10 +355,10 @@
 				</div>
 			</div>
 		</div>
-		<div id="interview-bloc2" style="position:relative;left:0%">
+		<div id="interview-bloc2" style="position:absolute">
 			<div id="tete4" class="tete">
 				<div id="super-photo4" class="super-photo">
-					<img src="images/interview/interview4.png"/>
+					<img src="images/interview/interview5.png"/>
 					<div class="interview-profil interview-personnes">Jean-François Longy</div>
 					<div class="interview-profil interview-agence">Cybercité</div>
 					<div class="interview-profil interview-origine">Originaire de Lyon</div>
@@ -367,7 +372,7 @@
 				</div>
 				<div id="interview4" class="interview">
 					<div class="photo">
-						<img src="images/interview/interview4.png"/>
+						<img src="images/interview/interview5.png"/>
 						<div class="interview-profil interview-personnes">Jean-François Longy</div>
 						<div class="interview-profil interview-agence">Cybercité</div>
 						<div class="interview-profil interview-origine">Originaire de Lyon</div>
@@ -381,7 +386,7 @@
 			</div>
 			<div id="tete5" class="tete">
 				<div id="super-photo5" class="super-photo">
-					<img src="images/interview/interview5.png"/>
+					<img src="images/interview/interview4.png"/>
 					<div class="interview-profil interview-personnes">Hervé Francès </div>
 					<div class="interview-profil interview-agence">OKO</div>
 					<div class="interview-profil interview-origine">Originaire de Paris</div>
@@ -395,7 +400,7 @@
 				</div>
 				<div id="interview5" class="interview">
 					<div class="photo">
-						<img src="images/interview/interview5.png"/>
+						<img src="images/interview/interview4.png"/>
 						<div class="interview-profil interview-personnes">Hervé Francès </div>
 						<div class="interview-profil interview-agence">OKO</div>
 						<div class="interview-profil interview-origine">Originaire de Paris</div>
@@ -408,10 +413,70 @@
 				</div>
 			</div>
 		</div>
+		<div id="footer">
+			<div id="footer1">
+				<a href="http://www.cometmedias.com"><img src="images/footer/com-et-medias.jpg"/></a>
+				<a href="http://www.ouestmedialab.fr"><img src="images/footer/ouest-medialab.jpg"/></a>
+				<a href="http://www.agrnantes.fr"><img id="agr-logo" class="logos" src="images/footer/agr.jpg" name="Cécile Aurégan<br/> Jordan Heraud" /></a>
+				<a href="http://web.polytech.univ-nantes.fr"><img id="polytech-logo" class="logos" src="images/footer/polytech-nantes.jpg" name="Francois Royer<br/>Meriem Alami-Marrouni"/></a>
+				<a href="http://www.sciencescom.org"><img  id="science-com-logo" class="logos" src="images/footer/sciences-com.jpg" name="Audrey Enet<br/>Nina Marty<br/>Claire Migeon"/></a>
+				<a href="http://www.orange.fr"><img src="images/footer/orange.jpg"/></a>
+				<a href="http://www.paysdelaloire.fr"><img src="images/footer/region-pdl.jpg"/></a>
+				<a href="http://www.univ-nantes.fr"><img src="images/footer/univ-nantes.jpg"/></a>
+			</div>
+			<div id="footer2">
+				<span id="footer2-left">
+					<a href="http://creativecommons.org"><img src="images/footer/creative-commons.jpg"/></a>
+					<a href="http://opensource.org"><img src="images/footer/open-source-initiative.jpg"/></a>
+					<a href="http://www.etalab.gouv.fr"><img src="images/footer/etalab-gouv.jpg"/></a>
+				</span>
+				<span id="footer2-right">
+					<a href="http://www.hyblab.fr"><img src="images/footer/hyblab-text.jpg"/></a>
+				</span>
+			</div>
+
+		</div>
 </div>
 	<script type="text/javascript" src="lib/jquery-ui/ui/jquery-ui.js"></script>
 	<script type="text/javascript" src="lib/jquery-ui/ui/jquery.ui.widget.js"></script>
 	<script type="text/javascript" src="interview-animations.js"></script>
+	
+	<script>
+		$(document).ready(function()
+			{
+				// We'll target all AREA elements with alt tags (Don't target the map element!!!) 
+				$('.logos').qtip(
+				{
+					content: {
+						attr: 'name', // Use the NAME attribute of the area map for the content 
+						title: {
+							text: 'Equipe'
+						}
+					},
+					position: {
+						my: 'bottom center', // Use the corner...  
+						at: 'top center' // ...and opposite corner  
+					},
+					style: {
+						classes: 'qtip-tipped' 
+					}
+				});
+				
+				$('.picto').qtip(
+						{
+							content: {
+								attr: 'name', // Use the NAME attribute of the area map for the content 
+							},
+							position: {
+								my: 'bottom center', // Use the corner...  
+								at: 'top center' // ...and opposite corner  
+							},
+							style: {
+								classes: 'qtip-dark' 
+							}
+						});
+			});
+	</script>
 	
 	</body> 
 </html>
