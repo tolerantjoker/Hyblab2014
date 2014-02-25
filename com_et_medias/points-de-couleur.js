@@ -1,6 +1,6 @@
 var context = {
 	getSize: function(){
-		return 10000/map.getResolution();
+		return 5000/map.getResolution();
 	}
 };
 
